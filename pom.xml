@@ -11,7 +11,6 @@
     <modules>
         <module>api</module>
         <module>impl</module>
-        <module>client</module>
     </modules>
 
     <properties>
@@ -19,6 +18,7 @@
         <jdk.version>1.8</jdk.version>
 
         <spring-platform.version>Brussels-SR4</spring-platform.version>
+        <retrofit.version>2.2.0</retrofit.version>
     </properties>
 
     <dependencies>
@@ -32,6 +32,12 @@
                 <version>${spring-platform.version}</version>
                 <type>pom</type>
                 <scope>import</scope>
+            </dependency>
+
+            <dependency>
+                <groupId>com.squareup.retrofit2</groupId>
+                <artifactId>converter-jackson</artifactId>
+                <version>${retrofit.version}</version>
             </dependency>
         </dependencies>
     </dependencyManagement>
