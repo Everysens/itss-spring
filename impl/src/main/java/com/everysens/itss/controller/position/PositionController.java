@@ -38,7 +38,8 @@ public class PositionController extends BaseController {
     }
 
     @RequestMapping(
-            method = RequestMethod.POST
+            method = RequestMethod.POST,
+            value = PositionApi.LAST_POSITION
     )
     @ResponseStatus(HttpStatus.CREATED)
     public void notifyLastPosition(@RequestBody PositionEventDto event){
@@ -52,7 +53,7 @@ public class PositionController extends BaseController {
     )
     @ResponseStatus(HttpStatus.OK)
     @ResponseBody
-    public PositionEventListDto getLastPosition(
+    public PositionEventListDto getPositionsTimeInterval(
             @RequestParam(Fields.ITSS_TRANSPORT_DEVICE_ID) String transportDeviceId,
             @RequestParam(Fields.FROM_UTC_TIMESTAMP) Double fromUtcTimestamp,
             @RequestParam(Fields.TO_UTC_TIMESTAMP) Double toUtcTimeStamp,
