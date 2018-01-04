@@ -1,6 +1,7 @@
 package com.everysens.itss.dto.error;
 
 import com.everysens.itss.dto.BaseDto;
+import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -10,7 +11,7 @@ import java.util.List;
 @Data
 @Builder
 @NoArgsConstructor
-
+@AllArgsConstructor
 public class ErrorDto extends BaseDto{
 
     public final static ErrorDto authenticationFailed = ErrorDto.builder().code(0100).message("Authentication failed.").build();

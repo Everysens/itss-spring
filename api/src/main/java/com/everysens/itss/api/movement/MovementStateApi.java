@@ -10,7 +10,7 @@ import static com.everysens.itss.api.Fields.BASE_PATH_1_1;
 
 public interface MovementStateApi {
 
-    public final static String LAST_MOVEMENT_STATE = "movementState";
+    String LAST_MOVEMENT_STATE = "movementState";
 
     @GET(value = BASE_PATH_1_1 + LAST_MOVEMENT_STATE)
     Response<MovementStateEventDto> getLastMovementState(@Query(Fields.ITSS_TRANSPORT_DEVICE_ID) String transportDeviceId,

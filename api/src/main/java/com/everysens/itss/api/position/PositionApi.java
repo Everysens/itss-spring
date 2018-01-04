@@ -11,8 +11,8 @@ import static com.everysens.itss.api.Fields.BASE_PATH_1_1;
 
 public interface PositionApi {
 
-    public final static String LAST_POSITION = "lastPosition";
-    public final static String POSITIONS_TIME_INTERVAL = "positionsTimeInterval";
+    String LAST_POSITION = "lastPosition";
+    String POSITIONS_TIME_INTERVAL = "positionsTimeInterval";
 
     @GET(value = BASE_PATH_1_1 + LAST_POSITION)
     Response<PositionEventDto> getLastPosition(@Query(Fields.ITSS_TRANSPORT_DEVICE_ID) String transportDeviceId,

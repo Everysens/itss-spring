@@ -3,11 +3,13 @@ package com.everysens.itss.dto;
 import com.everysens.itss.dto.position.GNSSPositionDto;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 
 @Data
+@NoArgsConstructor
 public abstract class BaseResponseDto extends BaseDto{
 
     @JsonProperty("ITSS_TRANSPORT_DEVICE_ID")

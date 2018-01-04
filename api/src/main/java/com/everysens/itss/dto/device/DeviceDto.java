@@ -1,6 +1,8 @@
 package com.everysens.itss.dto.device;
 
+import com.everysens.itss.dto.BaseDto;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -10,7 +12,8 @@ import javax.validation.constraints.NotNull;
 @Builder
 @Data
 @NoArgsConstructor
-public class DeviceDto {
+@AllArgsConstructor
+public class DeviceDto extends BaseDto{
 
     @JsonProperty("ITSS_TRANSPORT_DEVICE_ID")
     public String transportDeviceId;

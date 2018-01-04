@@ -3,6 +3,7 @@ package com.everysens.itss.dto.position;
 
 import com.everysens.itss.dto.BaseDto;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -10,6 +11,7 @@ import lombok.NoArgsConstructor;
 @Data
 @Builder
 @NoArgsConstructor
+@AllArgsConstructor
 public class LocationInfoDto extends BaseDto {
 
     @JsonProperty("Location_ZIP")
