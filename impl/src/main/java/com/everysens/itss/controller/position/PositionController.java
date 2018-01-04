@@ -1,6 +1,7 @@
 package com.everysens.itss.controller.position;
 
 import com.everysens.itss.api.Fields;
+import com.everysens.itss.api.position.PositionApi;
 import com.everysens.itss.controller.BaseController;
 import com.everysens.itss.dto.position.PositionEventDto;
 import com.everysens.itss.dto.position.PositionEventListDto;
@@ -9,6 +10,7 @@ import com.everysens.itss.service.position.IPositionService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
+
 
 public class PositionController extends BaseController {
 
@@ -22,14 +24,14 @@ public class PositionController extends BaseController {
     }
     @RequestMapping(
             method = RequestMethod.GET,
-            value = "/lastPosition"
+            value = PositionApi.LAST_POSITION
     )
     @ResponseStatus(HttpStatus.OK)
     @ResponseBody
     public PositionEventDto getLastPosition(
-            @RequestParam(Fields.ITSS_TransportDeviceID) String transportDeviceId,
-            @RequestParam(Fields.ITSS_CustomerSystemID) String customerSystemId,
-            @RequestParam(Fields.ITSS_PassPhrase) String passPhrase){
+            @RequestParam(Fields.ITSS_TRANSPORT_DEVICE_ID) String transportDeviceId,
+            @RequestParam(Fields.ITSS_CUSTOMER_SYSTEM_ID) String customerSystemId,
+            @RequestParam(Fields.ITSS_PASSPHRASE) String passPhrase){
         checkAuthentication(customerSystemId, passPhrase);
         return positionService.getLastPosition(customerSystemId, transportDeviceId);
 
@@ -51,11 +53,11 @@ public class PositionController extends BaseController {
     @ResponseStatus(HttpStatus.OK)
     @ResponseBody
     public PositionEventListDto getLastPosition(
-            @RequestParam(Fields.ITSS_TransportDeviceID) String transportDeviceId,
-            @RequestParam(Fields.fromUTCtimestamp) Double fromUtcTimestamp,
-            @RequestParam(Fields.toUTCtimestamp) Double toUtcTimeStamp,
-            @RequestParam(Fields.ITSS_CustomerSystemID) String customerSystemId,
-            @RequestParam(Fields.ITSS_PassPhrase) String passPhrase) {
+            @RequestParam(Fields.ITSS_TRANSPORT_DEVICE_ID) String transportDeviceId,
+            @RequestParam(Fields.FROM_UTC_TIMESTAMP) Double fromUtcTimestamp,
+            @RequestParam(Fields.TO_UTC_TIMESTAMP) Double toUtcTimeStamp,
+            @RequestParam(Fields.ITSS_CUSTOMER_SYSTEM_ID) String customerSystemId,
+            @RequestParam(Fields.ITSS_PASSPHRASE) String passPhrase) {
         checkAuthentication(customerSystemId, passPhrase);
         return positionService.getPositionsFromTo(
                 customerSystemId,

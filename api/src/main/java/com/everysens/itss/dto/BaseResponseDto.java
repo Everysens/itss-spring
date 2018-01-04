@@ -10,22 +10,22 @@ import javax.validation.constraints.Size;
 @Data
 public abstract class BaseResponseDto extends BaseDto{
 
-    @JsonProperty("ITSS_TransportDeviceID")
+    @JsonProperty("ITSS_TRANSPORT_DEVICE_ID")
     public String transportDeviceId;
 
     @NotNull
-    @JsonProperty("ITSS_TelematicsDeviceID")
+    @JsonProperty("ITSS_TELEMATICS_DEVICE_ID")
     public String telematicsDeviceId;
 
     @JsonProperty("GNSS_Position")
     public GNSSPositionDto gnssPosition;
 
     @NotNull
-    @JsonProperty("ITSS_TelematicsApplicationID")
+    @JsonProperty("ITSS_TELEMATICS_APPLICATION_ID")
     public String telematicsApplicationId;
 
     @NotNull
     @Size(min = 1, max = 20)
-    @JsonProperty("ITSS_PassPhrase")
+    @JsonProperty("ITSS_PASSPHRASE")
     public String passPhrase;
 }
