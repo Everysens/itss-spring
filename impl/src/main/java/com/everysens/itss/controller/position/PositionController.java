@@ -9,9 +9,11 @@ import com.everysens.itss.service.authentication.IAuthenticationService;
 import com.everysens.itss.service.position.IPositionService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
+import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
 
+@Controller
 public class PositionController extends BaseController {
 
     private final IPositionService positionService;

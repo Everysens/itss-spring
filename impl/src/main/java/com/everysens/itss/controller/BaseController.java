@@ -4,7 +4,6 @@ import com.everysens.itss.service.authentication.IAuthenticationService;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-@Controller
 @RequestMapping(
     path = "#{${itss-spring.base-path:/} + 'itss/1.1'}"
 )
