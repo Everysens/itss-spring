@@ -9,7 +9,7 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>itss-spring-impl</artifactId>
+    <artifactId>itss-spring-client</artifactId>
     <packaging>jar</packaging>
 
     <dependencies>
@@ -18,15 +18,7 @@
             <artifactId>itss-spring-api</artifactId>
             <version>${project.version}</version>
         </dependency>
-
-        <dependency>
-            <groupId>org.springframework</groupId>
-            <artifactId>spring-webmvc</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>org.springframework</groupId>
-            <artifactId>spring-beans</artifactId>
-        </dependency>
     </dependencies>
+
 
 </project>
