@@ -1,9 +1,8 @@
-package com.everysens.itss.service.movement;
+package com.everysens.itss.facade.movement;
 
 import com.everysens.itss.dto.movement.MovementStateEventDto;
-import com.everysens.itss.dto.position.PositionEventDto;
 
-public interface IMovementStateService {
+public interface IMovementStateFacade {
 
     MovementStateEventDto getLastMovementState(String customerSystemId, String transportDeviceId);
 

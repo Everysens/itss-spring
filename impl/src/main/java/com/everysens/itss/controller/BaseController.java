@@ -1,7 +1,6 @@
 package com.everysens.itss.controller;
 
-import com.everysens.itss.service.authentication.IAuthenticationService;
-import org.springframework.stereotype.Controller;
+import com.everysens.itss.facade.authentication.IAuthenticationFacade;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 @RequestMapping(
@@ -9,10 +8,10 @@ import org.springframework.web.bind.annotation.RequestMapping;
 )
 public class BaseController {
 
-    private final IAuthenticationService authenticationService;
+    private final IAuthenticationFacade authenticationService;
 
-    public BaseController(IAuthenticationService authenticationService){
-        this.authenticationService = authenticationService;
+    public BaseController(IAuthenticationFacade authenticationFacade){
+        this.authenticationService = authenticationFacade;
     }
 
     protected void checkAuthentication(String customerSystemId, String passphrase){

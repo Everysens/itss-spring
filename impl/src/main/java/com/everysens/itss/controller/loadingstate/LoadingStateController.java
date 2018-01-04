@@ -1,7 +1,7 @@
 package com.everysens.itss.controller.loadingstate;
 
 import com.everysens.itss.controller.BaseController;
-import com.everysens.itss.service.authentication.IAuthenticationService;
+import com.everysens.itss.facade.authentication.IAuthenticationFacade;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 
@@ -9,8 +9,8 @@ import org.springframework.stereotype.Controller;
 public class LoadingStateController extends BaseController {
 
     @Autowired
-    public LoadingStateController(IAuthenticationService authenticationService) {
-        super(authenticationService);
+    public LoadingStateController(IAuthenticationFacade authenticationFacade) {
+        super(authenticationFacade);
     }
 
     // TODO implement me

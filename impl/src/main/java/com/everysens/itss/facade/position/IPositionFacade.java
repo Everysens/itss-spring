@@ -1,9 +1,9 @@
-package com.everysens.itss.service.position;
+package com.everysens.itss.facade.position;
 
 import com.everysens.itss.dto.position.PositionEventDto;
 import com.everysens.itss.dto.position.PositionEventListDto;
 
-public interface IPositionService {
+public interface IPositionFacade {
 
     void notifyLastPosition(PositionEventDto lastPosition);
 

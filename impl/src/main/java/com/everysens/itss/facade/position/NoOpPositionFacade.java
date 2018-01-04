@@ -1,12 +1,11 @@
-package com.everysens.itss.service.position;
+package com.everysens.itss.facade.position;
 
-import com.everysens.itss.dto.position.PositionDto;
 import com.everysens.itss.dto.position.PositionEventDto;
 import com.everysens.itss.dto.position.PositionEventListDto;
 import org.springframework.stereotype.Service;
 
 @Service
-public class NoOpPositionService implements IPositionService {
+public class NoOpPositionFacade implements IPositionFacade {
 
     public void notifyLastPosition(PositionEventDto lastPosition) {
 

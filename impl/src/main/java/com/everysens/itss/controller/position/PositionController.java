@@ -5,8 +5,8 @@ import com.everysens.itss.api.position.PositionApi;
 import com.everysens.itss.controller.BaseController;
 import com.everysens.itss.dto.position.PositionEventDto;
 import com.everysens.itss.dto.position.PositionEventListDto;
-import com.everysens.itss.service.authentication.IAuthenticationService;
-import com.everysens.itss.service.position.IPositionService;
+import com.everysens.itss.facade.authentication.IAuthenticationFacade;
+import com.everysens.itss.facade.position.IPositionFacade;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Controller;
@@ -16,12 +16,12 @@ import org.springframework.web.bind.annotation.*;
 @Controller
 public class PositionController extends BaseController {
 
-    private final IPositionService positionService;
+    private final IPositionFacade positionService;
 
     @Autowired
-    public PositionController(IAuthenticationService authenticationService, IPositionService positionService){
-        super(authenticationService);
-        this.positionService = positionService;
+    public PositionController(IAuthenticationFacade authenticationFacade, IPositionFacade positionFacade){
+        super(authenticationFacade);
+        this.positionService = positionFacade;
 
     }
     @RequestMapping(

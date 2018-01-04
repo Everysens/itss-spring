@@ -4,8 +4,8 @@ import com.everysens.itss.api.Fields;
 import com.everysens.itss.api.movement.MovementStateApi;
 import com.everysens.itss.controller.BaseController;
 import com.everysens.itss.dto.movement.MovementStateEventDto;
-import com.everysens.itss.service.authentication.IAuthenticationService;
-import com.everysens.itss.service.movement.IMovementStateService;
+import com.everysens.itss.facade.authentication.IAuthenticationFacade;
+import com.everysens.itss.facade.movement.IMovementStateFacade;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Controller;
@@ -16,13 +16,13 @@ import static org.springframework.http.HttpStatus.OK;
 @Controller
 public class MovementStateController extends BaseController {
 
-    private final IMovementStateService movementStateService;
+    private final IMovementStateFacade movementStateService;
 
     @Autowired
-    public MovementStateController(IAuthenticationService authenticationService,
-                                   IMovementStateService movementStateService) {
-        super(authenticationService);
-        this.movementStateService = movementStateService;
+    public MovementStateController(IAuthenticationFacade authenticationFacade,
+                                   IMovementStateFacade movementStateFacade) {
+        super(authenticationFacade);
+        this.movementStateService = movementStateFacade;
     }
 
     @RequestMapping(

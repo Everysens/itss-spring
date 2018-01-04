@@ -1,10 +1,10 @@
-package com.everysens.itss.service.movement;
+package com.everysens.itss.facade.movement;
 
 import com.everysens.itss.dto.movement.MovementStateEventDto;
 import org.springframework.stereotype.Service;
 
 @Service
-public class NoOpMovementStateService implements IMovementStateService {
+public class NoOpMovementStateFacade implements IMovementStateFacade {
     public MovementStateEventDto getLastMovementState(String customerSystemId, String transportDeviceId) {
         return null;
     }
