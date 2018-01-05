@@ -1,5 +1,6 @@
 package com.everysens.itss.controller;
 
+import com.everysens.itss.dto.BaseResponseDto;
 import com.everysens.itss.facade.authentication.IAuthenticationFacade;
 import org.springframework.web.bind.annotation.RequestMapping;
 
@@ -12,6 +13,11 @@ public class BaseController {
 
     public BaseController(IAuthenticationFacade authenticationFacade){
         this.authenticationService = authenticationFacade;
+    }
+
+    protected void checkAuthentication(BaseResponseDto dto){
+        authenticationService.checkAuthentication(dto.getTelematicsApplicationId(), dto.getPassPhrase());
+        dto.setPassPhrase(null);
     }
 
     protected void checkAuthentication(String customerSystemId, String passphrase){

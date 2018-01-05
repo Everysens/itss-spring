@@ -47,7 +47,7 @@ public class PositionController extends BaseController {
     )
     @ResponseStatus(HttpStatus.CREATED)
     public void notifyLastPosition(@RequestBody PositionEventDto event){
-        checkAuthentication(event.getTelematicsApplicationId(), event.getPassPhrase());
+        checkAuthentication(event);
         positionService.notifyLastPosition(event);
     }
 

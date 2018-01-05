@@ -46,7 +46,7 @@ public class MovementStateController extends BaseController {
     )
     @ResponseStatus(HttpStatus.CREATED)
     public void notifyLastPosition(@RequestBody MovementStateEventDto event){
-        checkAuthentication(event.getTelematicsApplicationId(), event.getPassPhrase());
+        checkAuthentication(event);
         movementStateService.notifyLastMovementState(event);
     }
 
