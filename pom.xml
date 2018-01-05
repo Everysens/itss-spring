@@ -45,5 +45,13 @@
         </dependencies>
     </dependencyManagement>
 
+    <distributionManagement>
+        <snapshotRepository>
+            <id>everysens.nexus</id>
+            <name>Everysens - Public Snapshots repository</name>
+            <url>http://ci.everysens.com/nexus/repository/everysens-public-snapshot/</url>
+        </snapshotRepository>
+    </distributionManagement>
+
 
 </project>
