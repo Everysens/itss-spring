@@ -11,6 +11,10 @@ import javax.validation.constraints.NotNull;
 public class MovementStateEventDto extends PositionEventDto {
 
     @NotNull
+    @JsonProperty("UTCtimestamp")
+    private Double utcTimestamp;
+
+    @NotNull
     @JsonProperty("ITSS_MovementState")
     private MovementState movementState;
 
