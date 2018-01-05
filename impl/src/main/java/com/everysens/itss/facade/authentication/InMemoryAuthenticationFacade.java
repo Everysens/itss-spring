@@ -26,12 +26,20 @@ public class InMemoryAuthenticationFacade implements IAuthenticationFacade {
     }
 
     @Override
-    public void checkAuthentication(String customerSystemId, String passphrase) {
+    public void checkAuthentication(String login, String pass) {
+        checkAuthIsPresent(login, pass);
         if(authenticationCache.getKnownClients().stream()
-                .noneMatch(a -> customerSystemId.equals(a.getId()) && passphrase.equals(a.getPass()))){
+                .noneMatch(a -> login.equals(a.getId()) && pass.equals(a.getPass()))){
             throw new ItssException(ErrorDto.authenticationFailed);
         }
+    }
 
+
+    private void checkAuthIsPresent(String login, String pass){
+        if(login == null)
+            throw new ItssException(ErrorDto.missingTelematicDeviceId);
+        if(pass == null)
+            throw new ItssException(ErrorDto.missingPassPhrase);
     }
 
 
