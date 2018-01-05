@@ -15,11 +15,11 @@ import javax.validation.constraints.NotNull;
 @AllArgsConstructor
 public class DeviceDto extends BaseDto{
 
-    @JsonProperty("ITSS_TRANSPORT_DEVICE_ID")
+    @JsonProperty("ITSS_TransportDeviceID")
     public String transportDeviceId;
 
     @NotNull
-    @JsonProperty("ITSS_TELEMATICS_DEVICE_ID")
+    @JsonProperty("ITSS_TelematicsDeviceID")
     public String telematicsDeviceId;
 
 }

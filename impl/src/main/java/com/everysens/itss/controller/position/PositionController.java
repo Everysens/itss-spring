@@ -7,6 +7,7 @@ import com.everysens.itss.dto.position.PositionEventDto;
 import com.everysens.itss.dto.position.PositionEventListDto;
 import com.everysens.itss.facade.authentication.IAuthenticationFacade;
 import com.everysens.itss.facade.position.IPositionFacade;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Controller;
@@ -14,6 +15,7 @@ import org.springframework.web.bind.annotation.*;
 
 
 @Controller
+@Slf4j
 public class PositionController extends BaseController {
 
     private final IPositionFacade positionService;
@@ -45,6 +47,7 @@ public class PositionController extends BaseController {
     )
     @ResponseStatus(HttpStatus.CREATED)
     public void notifyLastPosition(@RequestBody PositionEventDto event){
+        log.info("notifyLastPosition {}", event);
         checkAuthentication(event.getTelematicsApplicationId(), event.getPassPhrase());
         positionService.notifyLastPosition(event);
     }

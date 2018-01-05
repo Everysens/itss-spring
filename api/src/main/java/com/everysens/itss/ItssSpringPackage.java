@@ -3,5 +3,5 @@ package com.everysens.itss;
 /**
  * marker class
  */
-public interface ItssPackage {
+public interface ItssSpringPackage {
 }

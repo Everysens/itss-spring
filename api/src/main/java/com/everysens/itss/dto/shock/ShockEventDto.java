@@ -1,7 +1,7 @@
 package com.everysens.itss.dto.shock;
 
 import com.everysens.itss.dto.position.PositionEventDto;
-import com.fasterxml.jackson.annotation.JsonUnwrapped;
+import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -16,7 +16,27 @@ import javax.validation.constraints.NotNull;
 public class ShockEventDto extends PositionEventDto {
 
     @NotNull
-    @JsonUnwrapped
-    private ShockDto shock;
+    @JsonProperty("X-Axis_triggered")
+    private Boolean xAxisTriggered;
+
+    @NotNull
+    @JsonProperty("X-Axis")
+    private Double xAxis;
+
+    @NotNull
+    @JsonProperty("Y-Axis_triggered")
+    private Boolean yAxisTriggered;
+
+    @NotNull
+    @JsonProperty("Y-Axis")
+    private Double yAxis;
+
+    @NotNull
+    @JsonProperty("Z-Axis_triggered")
+    private Boolean zAxisTriggered;
+
+    @NotNull
+    @JsonProperty("Y-Axis")
+    private Double zAxis;
 
 }

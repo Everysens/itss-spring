@@ -1,6 +1,7 @@
 package com.everysens.itss.dto.geofencing;
 
 import com.everysens.itss.dto.position.PositionEventDto;
+import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -15,6 +16,10 @@ import java.util.List;
 @NoArgsConstructor
 @AllArgsConstructor
 public class GeofenceEventListDto extends PositionEventDto {
+
+    @NotNull
+    @JsonProperty("UTCtimestamp")
+    private Double utcTimestamp;
 
     @NotNull
     @JsonProperty("ITSS_GeofenceList")

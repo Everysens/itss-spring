@@ -1,7 +1,7 @@
 package com.everysens.itss.dto;
 
-import com.everysens.itss.dto.position.GNSSPositionDto;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
@@ -10,24 +10,15 @@ import javax.validation.constraints.Size;
 
 @Data
 @NoArgsConstructor
+@AllArgsConstructor
 public abstract class BaseResponseDto extends BaseDto{
 
-    @JsonProperty("ITSS_TRANSPORT_DEVICE_ID")
-    public String transportDeviceId;
-
     @NotNull
-    @JsonProperty("ITSS_TELEMATICS_DEVICE_ID")
-    public String telematicsDeviceId;
-
-    @JsonProperty("GNSS_Position")
-    public GNSSPositionDto gnssPosition;
-
-    @NotNull
-    @JsonProperty("ITSS_TELEMATICS_APPLICATION_ID")
-    public String telematicsApplicationId;
+    @JsonProperty("ITSS_TelematicsApplicationID")
+    protected String telematicsApplicationId;
 
     @NotNull
     @Size(min = 1, max = 20)
-    @JsonProperty("ITSS_PASSPHRASE")
-    public String passPhrase;
+    @JsonProperty("ITSS_PassPhrase")
+    protected String passPhrase;
 }
