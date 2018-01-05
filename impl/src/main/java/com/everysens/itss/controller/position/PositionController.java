@@ -51,6 +51,7 @@ public class PositionController extends BaseController {
         positionService.notifyLastPosition(event);
     }
 
+
     @RequestMapping(
             method = RequestMethod.GET,
             value = "/positionsTimeInterval"
