@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.ExceptionHandler;
 @ControllerAdvice
 public class ITSSExceptionHandler {
 
-    @ExceptionHandler(value = Exception.class)
+    @ExceptionHandler(value = ItssException.class)
     public ResponseEntity<ErrorDto> handle(ItssException ex){
         return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(ex.getError());
     }
