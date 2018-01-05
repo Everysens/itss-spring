@@ -2,10 +2,7 @@ package com.everysens.itss.dto.geofencing;
 
 import com.everysens.itss.dto.position.PositionEventDto;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
 import javax.validation.constraints.NotNull;
 
@@ -13,6 +10,7 @@ import javax.validation.constraints.NotNull;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
+@ToString(callSuper = true)
 public class GeofenceStateEventDto extends PositionEventDto{
 
     @NotNull

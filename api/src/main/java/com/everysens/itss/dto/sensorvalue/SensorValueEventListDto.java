@@ -3,10 +3,7 @@ package com.everysens.itss.dto.sensorvalue;
 
 import com.everysens.itss.dto.BaseDeviceResponseDto;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
 import javax.validation.constraints.NotNull;
 import java.util.List;
@@ -15,6 +12,7 @@ import java.util.List;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
+@ToString(callSuper = true)
 public class SensorValueEventListDto extends BaseDeviceResponseDto{
 
     @NotNull
