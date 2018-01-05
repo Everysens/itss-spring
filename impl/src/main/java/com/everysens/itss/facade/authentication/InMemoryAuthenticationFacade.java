@@ -29,7 +29,7 @@ public class InMemoryAuthenticationFacade implements IAuthenticationFacade {
     public void checkAuthentication(String customerSystemId, String passphrase) {
         if(authenticationCache.getKnownClients().stream()
                 .noneMatch(a -> customerSystemId.equals(a.getId()) && passphrase.equals(a.getPass()))){
-            throw ItssException.fromError(ErrorDto.authenticationFailed);
+            throw new ItssException(ErrorDto.authenticationFailed);
         }
     }
 
