@@ -1,6 +1,5 @@
 package com.everysens.itss.dto.movement;
 
-import com.everysens.itss.dto.BaseDeviceResponseDto;
 import com.everysens.itss.dto.position.PositionEventDto;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.*;
@@ -8,7 +7,7 @@ import lombok.*;
 import javax.validation.constraints.NotNull;
 
 @Data
-@Builder
+@Builder(builderMethodName = "movementStateBuilder")
 @NoArgsConstructor
 @AllArgsConstructor
 @ToString(callSuper = true)
