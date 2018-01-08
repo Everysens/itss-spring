@@ -3,10 +3,14 @@ package com.everysens.itss.dto.movement;
 import com.everysens.itss.dto.BaseDeviceResponseDto;
 import com.everysens.itss.dto.position.PositionEventDto;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import lombok.ToString;
+import lombok.*;
 
 import javax.validation.constraints.NotNull;
 
+@Data
+@Builder
+@NoArgsConstructor
+@AllArgsConstructor
 @ToString(callSuper = true)
 public class MovementStateEventDto extends PositionEventDto {
 
