@@ -8,12 +8,11 @@ import com.everysens.itss.facade.authentication.IAuthenticationFacade;
 import com.everysens.itss.facade.movement.IMovementStateFacade;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
-import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
 import static org.springframework.http.HttpStatus.OK;
 
-@Controller
+@RestController
 public class MovementStateController extends BaseController {
 
     private final IMovementStateFacade movementStateService;
@@ -25,12 +24,8 @@ public class MovementStateController extends BaseController {
         this.movementStateService = movementStateFacade;
     }
 
-    @RequestMapping(
-            method = RequestMethod.GET,
-            value = MovementStateApi.LAST_MOVEMENT_STATE
-    )
-    @ResponseBody
     @ResponseStatus(OK)
+    @GetMapping(value = MovementStateApi.LAST_MOVEMENT_STATE)
     public MovementStateEventDto getLastMovementState(
             @RequestParam(Fields.ITSS_TRANSPORT_DEVICE_ID) String transportDeviceId,
             @RequestParam(Fields.ITSS_CUSTOMER_SYSTEM_ID) String customerSystemId,
@@ -40,11 +35,8 @@ public class MovementStateController extends BaseController {
 
     }
 
-    @RequestMapping(
-            method = RequestMethod.POST,
-            value = MovementStateApi.LAST_MOVEMENT_STATE
-    )
     @ResponseStatus(HttpStatus.CREATED)
+    @PostMapping(value = MovementStateApi.LAST_MOVEMENT_STATE)
     public void notifyLastPosition(@RequestBody MovementStateEventDto event){
         checkAuthentication(event);
         movementStateService.notifyLastMovementState(event);
